@@ -18,7 +18,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       TextEditingController(text: rows_cols);
   final TextEditingController _colsController =
       TextEditingController(text: rows_cols);
-  UpdateType _selectedUpdateType = UpdateType.metal;
+  UpdateType _selectedUpdateType = UpdateType.cppThreads;
 
   @override
   Widget build(BuildContext context) {

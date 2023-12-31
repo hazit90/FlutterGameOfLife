@@ -22,18 +22,24 @@ class CppComputer {
   late Function nativeDestruct;
 
   CppComputer(int rows, int cols, double cellSize) {
+    setupNativeLibrary();
+    // nativeLib = DynamicLibrary.process();
+
+    nativeInit = nativeLib.lookupFunction<_nativeInit, _dartInit>("initCpp");
+    nativeUpdate =
+        nativeLib.lookupFunction<_nativeUpdate, _dartUpdate>("updateCpp");
+    nativeDestruct =
+        nativeLib.lookupFunction<_nativeDestruct, _dartDestruct>("destructCpp");
+
+    //init cpp class
+    nativeInit(rows, cols, cellSize);
+  }
+
+  void setupNativeLibrary() {
     if (Platform.isMacOS || Platform.isIOS) {
       nativeLib = DynamicLibrary.process();
-
-      nativeInit = nativeLib.lookupFunction<_nativeInit, _dartInit>("initCpp");
-      nativeUpdate =
-          nativeLib.lookupFunction<_nativeUpdate, _dartUpdate>("updateCpp");
-      nativeDestruct = nativeLib
-          .lookupFunction<_nativeDestruct, _dartDestruct>("destructCpp");
-
-      //init cpp class    
-      nativeInit(rows, cols, cellSize);
-
+    } else if (Platform.isAndroid) {
+      nativeLib = DynamicLibrary.open("libcppApi.so");
     }
   }
 

@@ -17,15 +17,16 @@ class GolComputer {
   late DartComputer dartComp;
   late MetalComputer? metalComp;
   bool isApple = Platform.isMacOS || Platform.isIOS;
+  bool isAndroid = Platform.isAndroid;
 
   GolComputer(this.rows, this.columns, this.updateType) {
     if (updateType == UpdateType.flutter) {
       dartComp = DartComputer(rows, columns, cellSize);
     }
-    else if (updateType == UpdateType.cpp && isApple) {
+    else if (updateType == UpdateType.cpp && (isApple || isAndroid) ) {
       cppComp = CppComputer(rows, columns, cellSize);
     }
-    else if (updateType == UpdateType.cppThreads && isApple) {
+    else if (updateType == UpdateType.cppThreads && (isApple || isAndroid)) {
       threadComputer = CppThreadsComputer(rows, columns, cellSize);
     }
     else if (updateType == UpdateType.metal && isApple) {

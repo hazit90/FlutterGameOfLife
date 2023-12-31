@@ -6,7 +6,7 @@ class CppThreadsComputer
     float *m_pAliveLocs;//i_0, j_0, i_1, j_1, ...
     int rows = 0;
     int cols = 0;
-    int m_numThreads = 3;//seems to give the best performance for Apple m1 max
+    int m_numThreads = 32;//seems to give the best performance for Apple m1 max
     double cellSize = 0;
 
     

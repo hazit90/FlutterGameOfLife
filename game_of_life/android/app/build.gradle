@@ -58,6 +58,12 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    externalNativeBuild {
+        cmake {
+            path "../../lib/libs/CMakeLists.txt"
+        }
+    }
 }
 
 flutter {

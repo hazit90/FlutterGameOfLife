@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/android/app/.cxx/Debug/1o4q613a/armeabi-v7a",
+  "command": "/Users/harshilvaghjiani/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=armv7-none-linux-androideabi19 --gcc-toolchain=/Users/harshilvaghjiani/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/harshilvaghjiani/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -DcppThreadsApi_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles/cppThreadsApi.dir/cppThreadsComputer.cpp.o -c /Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/lib/libs/cppThreadsComputer.cpp",
+  "file": "/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/lib/libs/cppThreadsComputer.cpp"
+},
+{
+  "directory": "/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/android/app/.cxx/Debug/1o4q613a/armeabi-v7a",
+  "command": "/Users/harshilvaghjiani/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=armv7-none-linux-androideabi19 --gcc-toolchain=/Users/harshilvaghjiani/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/harshilvaghjiani/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -DcppThreadsApi_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles/cppThreadsApi.dir/cppThreadsWrapper.cpp.o -c /Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/lib/libs/cppThreadsWrapper.cpp",
+  "file": "/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/lib/libs/cppThreadsWrapper.cpp"
+},
+{
+  "directory": "/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/android/app/.cxx/Debug/1o4q613a/armeabi-v7a",
+  "command": "/Users/harshilvaghjiani/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=armv7-none-linux-androideabi19 --gcc-toolchain=/Users/harshilvaghjiani/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/harshilvaghjiani/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -DcppApi_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles/cppApi.dir/cppComputer.cpp.o -c /Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/lib/libs/cppComputer.cpp",
+  "file": "/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/lib/libs/cppComputer.cpp"
+},
+{
+  "directory": "/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/android/app/.cxx/Debug/1o4q613a/armeabi-v7a",
+  "command": "/Users/harshilvaghjiani/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=armv7-none-linux-androideabi19 --gcc-toolchain=/Users/harshilvaghjiani/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/harshilvaghjiani/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -DcppApi_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles/cppApi.dir/cppComputeWrapper.cpp.o -c /Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/lib/libs/cppComputeWrapper.cpp",
+  "file": "/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/lib/libs/cppComputeWrapper.cpp"
+}
+]

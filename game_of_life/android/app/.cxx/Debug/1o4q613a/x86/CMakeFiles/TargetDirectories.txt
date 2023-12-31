@@ -1,0 +1,4 @@
+/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/android/app/.cxx/Debug/1o4q613a/x86/CMakeFiles/rebuild_cache.dir
+/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/android/app/.cxx/Debug/1o4q613a/x86/CMakeFiles/edit_cache.dir
+/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/android/app/.cxx/Debug/1o4q613a/x86/CMakeFiles/cppThreadsApi.dir
+/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/android/app/.cxx/Debug/1o4q613a/x86/CMakeFiles/cppApi.dir

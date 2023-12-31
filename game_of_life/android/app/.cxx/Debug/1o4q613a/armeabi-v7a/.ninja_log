@@ -1,0 +1,10 @@
+# ninja log v5
+0	58	1704024447	CMakeFiles/cppApi.dir/cppComputeWrapper.cpp.o	ba34d311f1f1922d
+0	102	1704024447	CMakeFiles/cppApi.dir/cppComputer.cpp.o	276624b988d8813
+102	190	1704024447	/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/build/app/intermediates/cxx/Debug/1o4q613a/obj/armeabi-v7a/libcppApi.so	1d731f99c88d73be
+1	70	1704035564	CMakeFiles/cppThreadsApi.dir/cppThreadsWrapper.cpp.o	232c661f9b09ad1c
+1	410	1704035564	CMakeFiles/cppThreadsApi.dir/cppThreadsComputer.cpp.o	950ffc6499ea4071
+410	528	1704035564	/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/build/app/intermediates/cxx/Debug/1o4q613a/obj/armeabi-v7a/libcppThreadsApi.so	247145a83b014c30
+1	66	1704035905	CMakeFiles/cppThreadsApi.dir/cppThreadsWrapper.cpp.o	232c661f9b09ad1c
+1	401	1704035906	CMakeFiles/cppThreadsApi.dir/cppThreadsComputer.cpp.o	950ffc6499ea4071
+401	510	1704035906	/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/build/app/intermediates/cxx/Debug/1o4q613a/obj/armeabi-v7a/libcppThreadsApi.so	247145a83b014c30

@@ -19,18 +19,23 @@ class CppThreadsComputer {
   late Function nativeDestruct;
 
   CppThreadsComputer(int rows, int cols, double cellSize) {
+    setupNativeLibrary();
+    nativeInit =
+        nativeLib.lookupFunction<_nativeInit, _dartInit>("initCppThreads");
+    nativeUpdate = nativeLib
+        .lookupFunction<_nativeUpdate, _dartUpdate>("updateCppThreads");
+    nativeDestruct = nativeLib
+        .lookupFunction<_nativeDestruct, _dartDestruct>("destructCppThreads");
+
+    //init cpp class
+    nativeInit(rows, cols, cellSize);
+  }
+
+  void setupNativeLibrary() {
     if (Platform.isMacOS || Platform.isIOS) {
       nativeLib = DynamicLibrary.process();
-
-      nativeInit = nativeLib.lookupFunction<_nativeInit, _dartInit>("initCppThreads");
-      nativeUpdate =
-          nativeLib.lookupFunction<_nativeUpdate, _dartUpdate>("updateCppThreads");
-      nativeDestruct = nativeLib
-          .lookupFunction<_nativeDestruct, _dartDestruct>("destructCppThreads");
-
-      //init cpp class    
-      nativeInit(rows, cols, cellSize);
-
+    } else if (Platform.isAndroid) {
+      nativeLib = DynamicLibrary.open("libcppThreadsApi.so");
     }
   }
 

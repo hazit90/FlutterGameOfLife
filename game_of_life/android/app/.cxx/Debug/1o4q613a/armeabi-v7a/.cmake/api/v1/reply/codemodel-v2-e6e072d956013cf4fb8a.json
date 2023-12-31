@@ -1,0 +1,68 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "api",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "cppApi::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cppApi-Debug-bc33f0429679695c00aa.json",
+					"name" : "cppApi",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cppThreadsApi::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cppThreadsApi-Debug-0ce6504a4a6b086462dd.json",
+					"name" : "cppThreadsApi",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/android/app/.cxx/Debug/1o4q613a/armeabi-v7a",
+		"source" : "/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/lib/libs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 1
+	}
+}

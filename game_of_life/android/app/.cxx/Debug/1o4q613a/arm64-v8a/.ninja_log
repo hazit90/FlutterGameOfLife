@@ -1,0 +1,27 @@
+# ninja log v5
+1	72	1704024447	CMakeFiles/cppApi.dir/cppComputeWrapper.cpp.o	c3e8162f81de619a
+0	131	1704024447	CMakeFiles/cppApi.dir/cppComputer.cpp.o	15ecd2ed647b0979
+131	218	1704024447	/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/build/app/intermediates/cxx/Debug/1o4q613a/obj/arm64-v8a/libcppApi.so	8e701a9c96bbcec1
+1	211	1704035563	CMakeFiles/cppThreadsApi.dir/cppThreadsWrapper.cpp.o	c8791e21e56872e8
+1	583	1704035564	CMakeFiles/cppThreadsApi.dir/cppThreadsComputer.cpp.o	ecda79fd0e45dda2
+583	696	1704035564	/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/build/app/intermediates/cxx/Debug/1o4q613a/obj/arm64-v8a/libcppThreadsApi.so	6e8591d69e5abfdd
+2	67	1704035905	CMakeFiles/cppThreadsApi.dir/cppThreadsWrapper.cpp.o	c8791e21e56872e8
+1	403	1704035905	CMakeFiles/cppThreadsApi.dir/cppThreadsComputer.cpp.o	ecda79fd0e45dda2
+403	506	1704035905	/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/build/app/intermediates/cxx/Debug/1o4q613a/obj/arm64-v8a/libcppThreadsApi.so	6e8591d69e5abfdd
+2	68	1704036602	CMakeFiles/cppThreadsApi.dir/cppThreadsWrapper.cpp.o	c8791e21e56872e8
+1	420	1704036602	CMakeFiles/cppThreadsApi.dir/cppThreadsComputer.cpp.o	ecda79fd0e45dda2
+420	528	1704036602	/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/build/app/intermediates/cxx/Debug/1o4q613a/obj/arm64-v8a/libcppThreadsApi.so	6e8591d69e5abfdd
+2	65	1704036677	CMakeFiles/cppThreadsApi.dir/cppThreadsWrapper.cpp.o	c8791e21e56872e8
+1	420	1704036677	CMakeFiles/cppThreadsApi.dir/cppThreadsComputer.cpp.o	ecda79fd0e45dda2
+420	529	1704036677	/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/build/app/intermediates/cxx/Debug/1o4q613a/obj/arm64-v8a/libcppThreadsApi.so	6e8591d69e5abfdd
+2	68	1704036741	CMakeFiles/cppThreadsApi.dir/cppThreadsWrapper.cpp.o	c8791e21e56872e8
+1	413	1704036741	CMakeFiles/cppThreadsApi.dir/cppThreadsComputer.cpp.o	ecda79fd0e45dda2
+413	519	1704036741	/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/build/app/intermediates/cxx/Debug/1o4q613a/obj/arm64-v8a/libcppThreadsApi.so	6e8591d69e5abfdd
+2	68	1704036767	CMakeFiles/cppThreadsApi.dir/cppThreadsWrapper.cpp.o	c8791e21e56872e8
+1	412	1704036768	CMakeFiles/cppThreadsApi.dir/cppThreadsComputer.cpp.o	ecda79fd0e45dda2
+413	519	1704036768	/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/build/app/intermediates/cxx/Debug/1o4q613a/obj/arm64-v8a/libcppThreadsApi.so	6e8591d69e5abfdd
+1	64	1704036818	CMakeFiles/cppThreadsApi.dir/cppThreadsWrapper.cpp.o	c8791e21e56872e8
+0	404	1704036819	CMakeFiles/cppThreadsApi.dir/cppThreadsComputer.cpp.o	ecda79fd0e45dda2
+404	510	1704036819	/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/build/app/intermediates/cxx/Debug/1o4q613a/obj/arm64-v8a/libcppThreadsApi.so	6e8591d69e5abfdd
+1	107	1704036964	/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/build/app/intermediates/cxx/Debug/1o4q613a/obj/arm64-v8a/libcppApi.so	8e701a9c96bbcec1
+1	118	1704036964	/Users/harshilvaghjiani/Projects/Git/FlutterGameOfLife/game_of_life/build/app/intermediates/cxx/Debug/1o4q613a/obj/arm64-v8a/libcppThreadsApi.so	6e8591d69e5abfdd
