@@ -1,7 +1,7 @@
 import 'dart:ffi';
 import 'dart:io';
 
-import 'package:game_of_life/gol_data.dart';
+import 'package:game_of_life/data/gol_data.dart';
 
 typedef _nativeInit = Void Function(Int32 rows, Int32 cols, Double cellSize);
 typedef _dartInit = void Function(int rows, int cols, double cellSize);

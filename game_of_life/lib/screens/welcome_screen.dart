@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:game_of_life/game_screen.dart';
-import 'package:game_of_life/update_type.dart';
+import 'package:game_of_life/screens/game_screen.dart';
+import 'package:game_of_life/data/update_type.dart';
 
 // ignore: non_constant_identifier_names
 String rows_cols = '1000';

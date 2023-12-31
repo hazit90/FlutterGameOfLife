@@ -1,6 +1,6 @@
 
 import 'dart:typed_data';
-import 'package:game_of_life/gol_data.dart';
+import 'package:game_of_life/data/gol_data.dart';
 
 
 class DartComputer{

@@ -2,7 +2,7 @@ import 'dart:ffi';
 import 'dart:math';
 import 'dart:typed_data';
 import 'package:ffi/ffi.dart';
-import 'package:game_of_life/update_type.dart';
+import 'package:game_of_life/data/update_type.dart';
 
 class Grid2D {
   late Pointer<Float> dataPointer;

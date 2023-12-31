@@ -1,7 +1,7 @@
 import 'dart:ffi';
 import 'dart:typed_data';
 
-import 'package:game_of_life/update_type.dart';
+import 'package:game_of_life/data/update_type.dart';
 
 class OutputGrid {
   int rows = 0;

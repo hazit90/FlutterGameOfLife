@@ -1,6 +1,6 @@
-import 'package:game_of_life/grid_2d.dart';
-import 'package:game_of_life/output_grid.dart';
-import 'package:game_of_life/update_type.dart';
+import 'package:game_of_life/data/grid_2d.dart';
+import 'package:game_of_life/data/output_grid.dart';
+import 'package:game_of_life/data/update_type.dart';
 
 class GolData {
   static const double cellSize = 10.0;

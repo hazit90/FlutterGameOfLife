@@ -4,8 +4,8 @@ import 'package:game_of_life/computers/cpp_computer.dart';
 import 'package:game_of_life/computers/cpp_threads_computer.dart';
 import 'package:game_of_life/computers/dart_computer.dart';
 import 'package:game_of_life/computers/metal_computer.dart';
-import 'package:game_of_life/gol_data.dart';
-import 'package:game_of_life/update_type.dart';
+import 'package:game_of_life/data/gol_data.dart';
+import 'package:game_of_life/data/update_type.dart';
 
 class GolComputer {
   int rows = 0;

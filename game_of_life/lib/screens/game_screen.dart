@@ -1,12 +1,10 @@
-import 'dart:math';
 import 'dart:ui' as ui;
 
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:game_of_life/game_of_life.dart';
-import 'package:game_of_life/gol_data.dart';
+import 'package:game_of_life/data/gol_data.dart';
 import 'dart:async';
-import 'package:game_of_life/update_type.dart';
+import 'package:game_of_life/data/update_type.dart';
 import 'package:circular_buffer/circular_buffer.dart';
 
 bool debug = false;
@@ -96,7 +94,7 @@ class _GameScreenState extends State<GameScreen> {
       body: InteractiveViewer(
         onInteractionUpdate: (ScaleUpdateDetails details) {
           // Adjust this value to control the zoom sensitivity
-          final double zoomSensitivity = 0.02;
+          const double zoomSensitivity = 0.02;
           final double currentScale =
               _transformationController.value.getMaxScaleOnAxis();
           final double newScale =
@@ -104,7 +102,7 @@ class _GameScreenState extends State<GameScreen> {
           _transformationController.value =
               Matrix4.diagonal3Values(newScale, newScale, 1.0);
         },
-        boundaryMargin: EdgeInsets.all(1800), // Adjust as needed
+        boundaryMargin: const EdgeInsets.all(1800), // Adjust as needed
         minScale: 0.5, // Minimum zoom scale
         maxScale: 50.0, // Maximum zoom scale
         child: CustomPaint(

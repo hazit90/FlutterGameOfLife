@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:game_of_life/welcome_screen.dart';
+import 'package:game_of_life/screens/welcome_screen.dart';
 
 void main() {
   runApp(const MainApp());
