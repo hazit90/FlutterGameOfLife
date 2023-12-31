@@ -27,18 +27,18 @@
 		33CC10F32044A3C60003C045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33CC10F22044A3C60003C045 /* Assets.xcassets */; };
 		33CC10F62044A3C60003C045 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CC10F42044A3C60003C045 /* MainMenu.xib */; };
 		33CC11132044BFA00003C045 /* MainFlutterWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CC11122044BFA00003C045 /* MainFlutterWindow.swift */; };
-		9B6AA5962B3B18B20037568D /* cppComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA5942B3B18B20037568D /* cppComputer.cpp */; };
-		9B6AA59A2B3B3ABC0037568D /* cppThreadsWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA5972B3B3ABC0037568D /* cppThreadsWrapper.cpp */; };
-		9B6AA59B2B3B3ABC0037568D /* cppThreadsComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA5982B3B3ABC0037568D /* cppThreadsComputer.cpp */; };
-		9B6AA59F2B3B657F0037568D /* cppMetalComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA59C2B3B657F0037568D /* cppMetalComputer.cpp */; };
-		9B6AA5A02B3B657F0037568D /* metalComputeWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA59E2B3B657F0037568D /* metalComputeWrapper.cpp */; };
-		9B6AA5A62B3CA1CF0037568D /* metalComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA5A52B3CA1CF0037568D /* metalComputer.cpp */; };
-		9B6AA5A82B3CA3780037568D /* metal-cpp in Resources */ = {isa = PBXBuildFile; fileRef = 9B6AA5A72B3CA3780037568D /* metal-cpp */; };
 		9B6AA5AA2B3CA3A60037568D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6AA5A92B3CA3A60037568D /* Foundation.framework */; };
 		9B6AA5AC2B3CA3B20037568D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6AA5AB2B3CA3B20037568D /* QuartzCore.framework */; };
 		9B6AA5AE2B3CA3BA0037568D /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6AA5AD2B3CA3BA0037568D /* Metal.framework */; };
-		9B6AA5B02B3CC44B0037568D /* golKernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA5AF2B3CC44B0037568D /* golKernel.metal */; };
-		9BBEC3B32B39C24C00CD992F /* cppComputeWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BBEC3B22B39C24C00CD992F /* cppComputeWrapper.cpp */; };
+		9B6AA6082B418D2D0037568D /* cppComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA5FB2B418D2D0037568D /* cppComputer.cpp */; };
+		9B6AA6092B418D2D0037568D /* metal-cpp in Resources */ = {isa = PBXBuildFile; fileRef = 9B6AA5FD2B418D2D0037568D /* metal-cpp */; };
+		9B6AA60A2B418D2D0037568D /* cppComputeWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA5FE2B418D2D0037568D /* cppComputeWrapper.cpp */; };
+		9B6AA60B2B418D2D0037568D /* golKernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA6002B418D2D0037568D /* golKernel.metal */; };
+		9B6AA60C2B418D2D0037568D /* metalComputeWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA6012B418D2D0037568D /* metalComputeWrapper.cpp */; };
+		9B6AA60D2B418D2D0037568D /* metalComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA6022B418D2D0037568D /* metalComputer.cpp */; };
+		9B6AA60E2B418D2D0037568D /* cppThreadsWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA6032B418D2D0037568D /* cppThreadsWrapper.cpp */; };
+		9B6AA60F2B418D2D0037568D /* cppThreadsComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA6052B418D2D0037568D /* cppThreadsComputer.cpp */; };
+		9B6AA6102B418D2D0037568D /* cppMetalComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA6062B418D2D0037568D /* cppMetalComputer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,22 +90,22 @@
 		33E5194F232828860026EE4D /* AppInfo.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppInfo.xcconfig; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		9B6AA5942B3B18B20037568D /* cppComputer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppComputer.cpp; path = libs/cppComputer.cpp; sourceTree = "<group>"; };
-		9B6AA5952B3B18B20037568D /* cppComputer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cppComputer.hpp; path = libs/cppComputer.hpp; sourceTree = "<group>"; };
-		9B6AA5972B3B3ABC0037568D /* cppThreadsWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppThreadsWrapper.cpp; path = libs/cppThreadsWrapper.cpp; sourceTree = "<group>"; };
-		9B6AA5982B3B3ABC0037568D /* cppThreadsComputer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppThreadsComputer.cpp; path = libs/cppThreadsComputer.cpp; sourceTree = "<group>"; };
-		9B6AA5992B3B3ABC0037568D /* cppThreadsComputer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cppThreadsComputer.hpp; path = libs/cppThreadsComputer.hpp; sourceTree = "<group>"; };
-		9B6AA59C2B3B657F0037568D /* cppMetalComputer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppMetalComputer.cpp; path = libs/cppMetalComputer.cpp; sourceTree = "<group>"; };
-		9B6AA59D2B3B657F0037568D /* cppMetalComputer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cppMetalComputer.hpp; path = libs/cppMetalComputer.hpp; sourceTree = "<group>"; };
-		9B6AA59E2B3B657F0037568D /* metalComputeWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = metalComputeWrapper.cpp; path = libs/metalComputeWrapper.cpp; sourceTree = "<group>"; };
-		9B6AA5A42B3CA1CF0037568D /* metalComputer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = metalComputer.hpp; path = libs/metalComputer.hpp; sourceTree = "<group>"; };
-		9B6AA5A52B3CA1CF0037568D /* metalComputer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = metalComputer.cpp; path = libs/metalComputer.cpp; sourceTree = "<group>"; };
-		9B6AA5A72B3CA3780037568D /* metal-cpp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "metal-cpp"; path = "libs/metal-cpp"; sourceTree = "<group>"; };
 		9B6AA5A92B3CA3A60037568D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9B6AA5AB2B3CA3B20037568D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9B6AA5AD2B3CA3BA0037568D /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
-		9B6AA5AF2B3CC44B0037568D /* golKernel.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = golKernel.metal; path = libs/golKernel.metal; sourceTree = "<group>"; };
-		9BBEC3B22B39C24C00CD992F /* cppComputeWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppComputeWrapper.cpp; path = libs/cppComputeWrapper.cpp; sourceTree = "<group>"; };
+		9B6AA5FB2B418D2D0037568D /* cppComputer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppComputer.cpp; path = ../lib/libs/cppComputer.cpp; sourceTree = "<group>"; };
+		9B6AA5FC2B418D2D0037568D /* cppComputer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cppComputer.hpp; path = ../lib/libs/cppComputer.hpp; sourceTree = "<group>"; };
+		9B6AA5FD2B418D2D0037568D /* metal-cpp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "metal-cpp"; path = "../lib/libs/metal-cpp"; sourceTree = "<group>"; };
+		9B6AA5FE2B418D2D0037568D /* cppComputeWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppComputeWrapper.cpp; path = ../lib/libs/cppComputeWrapper.cpp; sourceTree = "<group>"; };
+		9B6AA5FF2B418D2D0037568D /* metalComputer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = metalComputer.hpp; path = ../lib/libs/metalComputer.hpp; sourceTree = "<group>"; };
+		9B6AA6002B418D2D0037568D /* golKernel.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = golKernel.metal; path = ../lib/libs/golKernel.metal; sourceTree = "<group>"; };
+		9B6AA6012B418D2D0037568D /* metalComputeWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = metalComputeWrapper.cpp; path = ../lib/libs/metalComputeWrapper.cpp; sourceTree = "<group>"; };
+		9B6AA6022B418D2D0037568D /* metalComputer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = metalComputer.cpp; path = ../lib/libs/metalComputer.cpp; sourceTree = "<group>"; };
+		9B6AA6032B418D2D0037568D /* cppThreadsWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppThreadsWrapper.cpp; path = ../lib/libs/cppThreadsWrapper.cpp; sourceTree = "<group>"; };
+		9B6AA6042B418D2D0037568D /* cppThreadsComputer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cppThreadsComputer.hpp; path = ../lib/libs/cppThreadsComputer.hpp; sourceTree = "<group>"; };
+		9B6AA6052B418D2D0037568D /* cppThreadsComputer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppThreadsComputer.cpp; path = ../lib/libs/cppThreadsComputer.cpp; sourceTree = "<group>"; };
+		9B6AA6062B418D2D0037568D /* cppMetalComputer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppMetalComputer.cpp; path = ../lib/libs/cppMetalComputer.cpp; sourceTree = "<group>"; };
+		9B6AA6072B418D2D0037568D /* cppMetalComputer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cppMetalComputer.hpp; path = ../lib/libs/cppMetalComputer.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,19 +207,19 @@
 		9BBEC3B12B39C22C00CD992F /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				9B6AA5AF2B3CC44B0037568D /* golKernel.metal */,
-				9B6AA5A72B3CA3780037568D /* metal-cpp */,
-				9B6AA5A52B3CA1CF0037568D /* metalComputer.cpp */,
-				9B6AA5A42B3CA1CF0037568D /* metalComputer.hpp */,
-				9B6AA59C2B3B657F0037568D /* cppMetalComputer.cpp */,
-				9B6AA59D2B3B657F0037568D /* cppMetalComputer.hpp */,
-				9B6AA59E2B3B657F0037568D /* metalComputeWrapper.cpp */,
-				9B6AA5982B3B3ABC0037568D /* cppThreadsComputer.cpp */,
-				9B6AA5992B3B3ABC0037568D /* cppThreadsComputer.hpp */,
-				9B6AA5972B3B3ABC0037568D /* cppThreadsWrapper.cpp */,
-				9B6AA5942B3B18B20037568D /* cppComputer.cpp */,
-				9B6AA5952B3B18B20037568D /* cppComputer.hpp */,
-				9BBEC3B22B39C24C00CD992F /* cppComputeWrapper.cpp */,
+				9B6AA5FB2B418D2D0037568D /* cppComputer.cpp */,
+				9B6AA5FC2B418D2D0037568D /* cppComputer.hpp */,
+				9B6AA5FE2B418D2D0037568D /* cppComputeWrapper.cpp */,
+				9B6AA6062B418D2D0037568D /* cppMetalComputer.cpp */,
+				9B6AA6072B418D2D0037568D /* cppMetalComputer.hpp */,
+				9B6AA6052B418D2D0037568D /* cppThreadsComputer.cpp */,
+				9B6AA6042B418D2D0037568D /* cppThreadsComputer.hpp */,
+				9B6AA6032B418D2D0037568D /* cppThreadsWrapper.cpp */,
+				9B6AA6002B418D2D0037568D /* golKernel.metal */,
+				9B6AA5FD2B418D2D0037568D /* metal-cpp */,
+				9B6AA6022B418D2D0037568D /* metalComputer.cpp */,
+				9B6AA5FF2B418D2D0037568D /* metalComputer.hpp */,
+				9B6AA6012B418D2D0037568D /* metalComputeWrapper.cpp */,
 			);
 			name = Api;
 			sourceTree = "<group>";
@@ -337,7 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B6AA5A82B3CA3780037568D /* metal-cpp in Resources */,
+				9B6AA6092B418D2D0037568D /* metal-cpp in Resources */,
 				33CC10F32044A3C60003C045 /* Assets.xcassets in Resources */,
 				33CC10F62044A3C60003C045 /* MainMenu.xib in Resources */,
 			);
@@ -399,17 +399,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B6AA60E2B418D2D0037568D /* cppThreadsWrapper.cpp in Sources */,
+				9B6AA60A2B418D2D0037568D /* cppComputeWrapper.cpp in Sources */,
+				9B6AA60C2B418D2D0037568D /* metalComputeWrapper.cpp in Sources */,
+				9B6AA60B2B418D2D0037568D /* golKernel.metal in Sources */,
 				33CC11132044BFA00003C045 /* MainFlutterWindow.swift in Sources */,
-				9B6AA59B2B3B3ABC0037568D /* cppThreadsComputer.cpp in Sources */,
+				9B6AA60D2B418D2D0037568D /* metalComputer.cpp in Sources */,
+				9B6AA60F2B418D2D0037568D /* cppThreadsComputer.cpp in Sources */,
 				33CC10F12044A3C60003C045 /* AppDelegate.swift in Sources */,
+				9B6AA6082B418D2D0037568D /* cppComputer.cpp in Sources */,
 				335BBD1B22A9A15E00E9071D /* GeneratedPluginRegistrant.swift in Sources */,
-				9B6AA59F2B3B657F0037568D /* cppMetalComputer.cpp in Sources */,
-				9B6AA59A2B3B3ABC0037568D /* cppThreadsWrapper.cpp in Sources */,
-				9B6AA5B02B3CC44B0037568D /* golKernel.metal in Sources */,
-				9BBEC3B32B39C24C00CD992F /* cppComputeWrapper.cpp in Sources */,
-				9B6AA5A62B3CA1CF0037568D /* metalComputer.cpp in Sources */,
-				9B6AA5962B3B18B20037568D /* cppComputer.cpp in Sources */,
-				9B6AA5A02B3B657F0037568D /* metalComputeWrapper.cpp in Sources */,
+				9B6AA6102B418D2D0037568D /* cppMetalComputer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +539,7 @@
 				CODE_SIGN_ENTITLEMENTS = Runner/DebugProfile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/libs/metal-cpp";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../lib/libs/metal-cpp";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -667,7 +667,7 @@
 				CODE_SIGN_ENTITLEMENTS = Runner/DebugProfile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/libs/metal-cpp";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../lib/libs/metal-cpp";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -689,7 +689,7 @@
 				CODE_SIGN_ENTITLEMENTS = Runner/Release.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/libs/metal-cpp";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../lib/libs/metal-cpp";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
