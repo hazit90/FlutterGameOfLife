@@ -1,5 +1,7 @@
 #include <cstdint>
 #include <atomic>
+#include <vector>
+#include <utility>
 
 class CppThreadsComputer
 {
@@ -22,9 +24,10 @@ public:
     float* update();
 
 private:
-
     void initData();
     void populateInputGridWithBools();
     int32_t countNeighbors(int x, int y);
+    int32_t countNeighborsBounds(int x, int y);
     void updateChunk(int startRow, int endRow, std::atomic<int>& aliveCounter);
+    void updateChunkLockFree(int startRow, int endRow, std::vector<std::pair<float, float>>& result);
 };

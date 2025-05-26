@@ -44,71 +44,67 @@ void CppThreadsComputer::populateInputGridWithBools()
 }
 
 float* CppThreadsComputer::update(){
+    memset(m_pAliveLocs, 0, rows * cols * 2 * sizeof(float));
     
-    // Reset to zero
-    for(int i = 0; i < rows * cols * 2; i++){
-        m_pAliveLocs[i] = 0.0;
-    }
-    
-    // Use atomic counter for thread-safe indexing
-    std::atomic<int> aliveCounter{0};
-    
+    // Pre-allocate per-thread buffers
+    std::vector<std::vector<std::pair<float, float>>> threadResults(m_numThreads);
     std::vector<std::thread>* threads = (std::vector<std::thread>*)m_pThreadsList;
+    
     int chunkSize = rows / m_numThreads;
 
     for (int t = 0; t < m_numThreads; ++t) {
         int startRow = t * chunkSize;
         int endRow = (t == m_numThreads - 1) ? rows : startRow + chunkSize;
-
-        (*threads)[t] = std::thread(&CppThreadsComputer::updateChunk, this, startRow, endRow, std::ref(aliveCounter));
+        
+        (*threads)[t] = std::thread(&CppThreadsComputer::updateChunkLockFree, this, 
+                                   startRow, endRow, std::ref(threadResults[t]));
     }
 
     for (auto& th : *threads) {
         th.join();
     }
-
-    // Swap grids
-    std::swap(m_pGrid, m_pNewGrid);
     
-    return m_pAliveLocs;
-}
-
-void CppThreadsComputer::updateChunk(int startRow, int endRow, std::atomic<int>& aliveCounter) {
-    // Local buffer for alive cells to minimize mutex contention
-    std::vector<std::pair<float, float>> localAliveCells;
-    localAliveCells.reserve((endRow - startRow) * cols); // Reserve space
-    
-    for (int y = startRow; y < endRow; y++) {
-        for (int x = 0; x < cols; x++) {
-            int neighbors = countNeighbors(x, y);
-            bool alive = m_pGrid[y * cols + x] == 1;
-
-            // Apply Game of Life rules
-            if (alive && (neighbors < 2 || neighbors > 3)) {
-                m_pNewGrid[y * cols + x] = 0;
-            } else if (!alive && neighbors == 3) {
-                m_pNewGrid[y * cols + x] = 1;
-            } else {
-                m_pNewGrid[y * cols + x] = m_pGrid[y * cols + x];
-            }
-            
-            // Collect alive cells locally
-            if (m_pNewGrid[y * cols + x] == 1) {
-                float cellX = x * cellSize + cellSize / 2;
-                float cellY = y * cellSize + cellSize / 2;
-                localAliveCells.emplace_back(cellX, cellY);
+    // Combine results without locks
+    int k = 0;
+    for (auto& result : threadResults) {
+        for (auto& cell : result) {
+            if (k + 1 < rows * cols * 2) {
+                m_pAliveLocs[k++] = cell.first;
+                m_pAliveLocs[k++] = cell.second;
             }
         }
     }
+
+    std::swap(m_pGrid, m_pNewGrid);
+    return m_pAliveLocs;
+}
+
+void CppThreadsComputer::updateChunkLockFree(int startRow, int endRow, 
+                                            std::vector<std::pair<float, float>>& result) {
+    result.clear();
+    result.reserve((endRow - startRow) * cols / 4); // Estimate
     
-    // Single mutex lock to copy all alive cells
-    if (!localAliveCells.empty()) {
-        std::lock_guard<std::mutex> lock(*(std::mutex*)m_pMutex);
-        int startIdx = aliveCounter.fetch_add(localAliveCells.size() * 2);
-        
-        for (size_t i = 0; i < localAliveCells.size() && startIdx + i * 2 + 1 < rows * cols * 2; ++i) {
-            m_pAliveLocs[startIdx + i * 2] = localAliveCells[i].first;
-            m_pAliveLocs[startIdx + i * 2 + 1] = localAliveCells[i].second;
+    const float halfCell = cellSize * 0.5f;
+    
+    for (int y = startRow; y < endRow; y++) {
+        for (int x = 0; x < cols; x++) {
+            int idx = y * cols + x;
+            int neighbors = (y > 0 && y < rows - 1 && x > 0 && x < cols - 1) ?
+                m_pGrid[(y-1) * cols + (x-1)] + m_pGrid[(y-1) * cols + x] + m_pGrid[(y-1) * cols + (x+1)] +
+                m_pGrid[y * cols + (x-1)] +                                   m_pGrid[y * cols + (x+1)] +
+                m_pGrid[(y+1) * cols + (x-1)] + m_pGrid[(y+1) * cols + x] + m_pGrid[(y+1) * cols + (x+1)] :
+                countNeighborsBounds(x, y);
+            
+            uint8_t alive = m_pGrid[idx];
+            uint8_t newState = alive ? 
+                ((neighbors == 2 || neighbors == 3) ? 1 : 0) : 
+                ((neighbors == 3) ? 1 : 0);
+            
+            m_pNewGrid[idx] = newState;
+            
+            if (newState) {
+                result.emplace_back(x * cellSize + halfCell, y * cellSize + halfCell);
+            }
         }
     }
 }
@@ -124,5 +120,24 @@ int32_t CppThreadsComputer::countNeighbors(int x, int y){
             }
         }
     }
+    return count;
+}
+
+int32_t CppThreadsComputer::countNeighborsBounds(int x, int y) {
+    int32_t count = 0;
+    
+    // Optimized bounds checking
+    int startY = (y > 0) ? y - 1 : y;
+    int endY = (y < rows - 1) ? y + 1 : y;
+    int startX = (x > 0) ? x - 1 : x;
+    int endX = (x < cols - 1) ? x + 1 : x;
+    
+    for (int ny = startY; ny <= endY; ny++) {
+        for (int nx = startX; nx <= endX; nx++) {
+            if (nx == x && ny == y) continue;  // Skip center cell
+            count += m_pGrid[ny * cols + nx];
+        }
+    }
+    
     return count;
 }
