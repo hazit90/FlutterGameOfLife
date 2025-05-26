@@ -71,5 +71,7 @@ class GolComputer {
     if (updateType == UpdateType.cpp) cppComp?.dispose();
     if (updateType == UpdateType.cppThreads) threadComputer?.dispose();
     if (updateType == UpdateType.metal) metalComp?.dispose();
+    if (updateType == UpdateType.golang) golangComp?.dispose();
+    if (updateType == UpdateType.golangThreads) golangThreadsComp?.dispose();
   }
 }

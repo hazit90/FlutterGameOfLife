@@ -19,4 +19,6 @@ private:
     void initData();
     void populateWithBools();
     int32_t countNeighbors(int x, int y);
+    void processBorderCells(int& k);
+    void processSingleCell(int x, int y, int& k, float halfCell);
 };
