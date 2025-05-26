@@ -1,11 +1,11 @@
-
 //
 #include <cstdint>
 
 class CppComputer
 {
-    int8_t *m_pGrid;
-    float *m_pAliveLocs;//i_0, j_0, i_1, j_1, ...
+    uint8_t *m_pGrid;      // Current generation
+    uint8_t *m_pNewGrid;   // Next generation (pre-allocated)
+    float *m_pAliveLocs;   // i_0, j_0, i_1, j_1, ...
     int rows = 0;
     int cols = 0;
     double cellSize = 0;
@@ -16,8 +16,7 @@ public:
     float* update();
 
 private:
-
     void initData();
-    void populateWithBools(int8_t* data);
+    void populateWithBools();
     int32_t countNeighbors(int x, int y);
 };
