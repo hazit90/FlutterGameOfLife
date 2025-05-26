@@ -39,6 +39,8 @@
 		9B6AA60E2B418D2D0037568D /* cppThreadsWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA6032B418D2D0037568D /* cppThreadsWrapper.cpp */; };
 		9B6AA60F2B418D2D0037568D /* cppThreadsComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA6052B418D2D0037568D /* cppThreadsComputer.cpp */; };
 		9B6AA6102B418D2D0037568D /* cppMetalComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA6062B418D2D0037568D /* cppMetalComputer.cpp */; };
+		9BD760FB2DE4B06E00CEF875 /* libgoApi.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9BD760F82DE4B03B00CEF875 /* libgoApi.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9BD761002DE4C6E300CEF875 /* libgoThreadsApi.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9BD760FE2DE4C6DA00CEF875 /* libgoThreadsApi.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,17 @@
 			files = (
 			);
 			name = "Bundle Framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BD760FA2DE4B05100CEF875 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				9BD761002DE4C6E300CEF875 /* libgoThreadsApi.dylib in CopyFiles */,
+				9BD760FB2DE4B06E00CEF875 /* libgoApi.dylib in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -106,6 +119,10 @@
 		9B6AA6052B418D2D0037568D /* cppThreadsComputer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppThreadsComputer.cpp; path = ../lib/libs/cppThreadsComputer.cpp; sourceTree = "<group>"; };
 		9B6AA6062B418D2D0037568D /* cppMetalComputer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppMetalComputer.cpp; path = ../lib/libs/cppMetalComputer.cpp; sourceTree = "<group>"; };
 		9B6AA6072B418D2D0037568D /* cppMetalComputer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cppMetalComputer.hpp; path = ../lib/libs/cppMetalComputer.hpp; sourceTree = "<group>"; };
+		9BD760F72DE4B03B00CEF875 /* libgoApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libgoApi.h; sourceTree = "<group>"; };
+		9BD760F82DE4B03B00CEF875 /* libgoApi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libgoApi.dylib; sourceTree = "<group>"; };
+		9BD760FD2DE4C6DA00CEF875 /* libgoThreadsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libgoThreadsApi.h; sourceTree = "<group>"; };
+		9BD760FE2DE4C6DA00CEF875 /* libgoThreadsApi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libgoThreadsApi.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +168,7 @@
 		33CC10E42044A3C60003C045 = {
 			isa = PBXGroup;
 			children = (
+				9BD760F92DE4B03B00CEF875 /* libs */,
 				9BBEC3B12B39C22C00CD992F /* Api */,
 				33FAB671232836740065AC1E /* Runner */,
 				33CEB47122A05771004F2AC0 /* Flutter */,
@@ -224,6 +242,17 @@
 			name = Api;
 			sourceTree = "<group>";
 		};
+		9BD760F92DE4B03B00CEF875 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				9BD760FD2DE4C6DA00CEF875 /* libgoThreadsApi.h */,
+				9BD760FE2DE4C6DA00CEF875 /* libgoThreadsApi.dylib */,
+				9BD760F72DE4B03B00CEF875 /* libgoApi.h */,
+				9BD760F82DE4B03B00CEF875 /* libgoApi.dylib */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
 		D73912EC22F37F3D000D13A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +288,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33CC10FB2044A3C60003C045 /* Build configuration list for PBXNativeTarget "Runner" */;
 			buildPhases = (
+				9BD760F62DE4A82200CEF875 /* Run Script: build and copy go stuff */,
+				9BD760FC2DE4C56800CEF875 /* Run Script: go threads */,
+				9BD760FA2DE4B05100CEF875 /* CopyFiles */,
 				33CC10E92044A3C60003C045 /* Sources */,
 				33CC10EA2044A3C60003C045 /* Frameworks */,
 				33CC10EB2044A3C60003C045 /* Resources */,
@@ -282,7 +314,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					331C80D4294CF70F00263BE5 = {
@@ -383,6 +415,43 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/macos_assemble.sh && touch Flutter/ephemeral/tripwire";
+		};
+		9BD760F62DE4A82200CEF875 /* Run Script: build and copy go stuff */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: build and copy go stuff";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\n# Add Go to PATH explicitly\nexport PATH=\"/usr/local/go/bin:$PATH\"\n\n# Define source and destination paths\nGO_SOURCE_DIR=\"$PROJECT_DIR/../lib/libs/go\"\nGO_FILE=\"$GO_SOURCE_DIR/golangcomputer.go\"\nDEST_DIR=\"$PROJECT_DIR/libs\"\n\n# Ensure the destination directory exists\nmkdir -p \"$DEST_DIR\"\n\n# Check if Go is installed\nif ! command -v go &> /dev/null; then\n    echo \"Error: Go is not installed or not in PATH\"\n    echo \"Current PATH: $PATH\"\n    exit 1\nfi\n\n# Check if the Go file exists\nif [ ! -f \"$GO_FILE\" ]; then\n    echo \"Error: Go file not found at $GO_FILE\"\n    exit 1\nfi\n\n# Change to the Go source directory\ncd \"$GO_SOURCE_DIR\"\n\n# Build the shared library for macOS\necho \"Building Go shared library...\"\ngo build -buildmode=c-shared -o libgoApi.dylib golangcomputer.go\n\n# Check if build was successful\nif [ $? -ne 0 ]; then\n    echo \"Error: Failed to build Go shared library\"\n    exit 1\nfi\n\n# List of files to copy (Go generates both .dylib and .h files)\nFILES_TO_COPY=(\n    \"$GO_SOURCE_DIR/libgoApi.dylib\"\n    \"$GO_SOURCE_DIR/libgoApi.h\"\n)\n\n# Copy each file to the destination\nfor file in \"${FILES_TO_COPY[@]}\"; do\n    if [ -f \"$file\" ]; then\n        echo \"Copying $file to $DEST_DIR\"\n        cp \"$file\" \"$DEST_DIR\"\n    else\n        echo \"Warning: $file not found. Skipping.\"\n    fi\ndone\n\necho \"Go shared library and header files have been copied to $DEST_DIR\"\n\n# Optional: Clean up source directory (remove generated files from source)\n# rm -f \"$GO_SOURCE_DIR/libgoApi.dylib\" \"$GO_SOURCE_DIR/libgoApi.h\"\n";
+		};
+		9BD760FC2DE4C56800CEF875 /* Run Script: go threads */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script: go threads";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\n# Add Go to PATH explicitly\nexport PATH=\"/usr/local/go/bin:$PATH\"\n\n# Define source and destination paths\nGO_SOURCE_DIR=\"$PROJECT_DIR/../lib/libs/gothreads\"\nGO_FILE=\"$GO_SOURCE_DIR/golangthreadscomputer.go\"\nDEST_DIR=\"$PROJECT_DIR/libs\"\n\n# Ensure the destination directory exists\nmkdir -p \"$DEST_DIR\"\n\n# Check if Go is installed\nif ! command -v go &> /dev/null; then\n    echo \"Error: Go is not installed or not in PATH\"\n    echo \"Current PATH: $PATH\"\n    exit 1\nfi\n\n# Check if the Go file exists\nif [ ! -f \"$GO_FILE\" ]; then\n    echo \"Error: Go file not found at $GO_FILE\"\n    exit 1\nfi\n\n# Change to the Go source directory\ncd \"$GO_SOURCE_DIR\"\n\n# Build the shared library for macOS\necho \"Building Go threaded shared library...\"\ngo build -buildmode=c-shared -o libgoThreadsApi.dylib golangthreadscomputer.go\n\n# Check if build was successful\nif [ $? -ne 0 ]; then\n    echo \"Error: Failed to build Go threaded shared library\"\n    exit 1\nfi\n\n# List of files to copy (Go generates both .dylib and .h files)\nFILES_TO_COPY=(\n    \"$GO_SOURCE_DIR/libgoThreadsApi.dylib\"\n    \"$GO_SOURCE_DIR/libgoThreadsApi.h\"\n)\n\n# Copy each file to the destination\nfor file in \"${FILES_TO_COPY[@]}\"; do\n    if [ -f \"$file\" ]; then\n        echo \"Copying $file to $DEST_DIR\"\n        cp \"$file\" \"$DEST_DIR\"\n    else\n        echo \"Warning: $file not found. Skipping.\"\n    fi\ndone\n\necho \"Go threaded shared library and header files have been copied to $DEST_DIR\"\n\n# Optional: Clean up source directory (remove generated files from source)\n# rm -f \"$GO_SOURCE_DIR/libgoThreadsApi.dylib\" \"$GO_SOURCE_DIR/libgoThreadsApi.h\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -545,6 +614,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -673,6 +746,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -694,6 +771,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
 				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

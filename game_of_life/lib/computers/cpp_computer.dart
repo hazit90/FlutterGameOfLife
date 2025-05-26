@@ -39,7 +39,7 @@ class CppComputer {
     if (Platform.isMacOS || Platform.isIOS) {
       nativeLib = DynamicLibrary.process();
     } else if (Platform.isAndroid) {
-      nativeLib = DynamicLibrary.open("libcppApi.so");
+      nativeLib = DynamicLibrary.open("libgolangApi.so");
     }
   }
 
