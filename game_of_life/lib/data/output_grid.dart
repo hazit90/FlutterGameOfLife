@@ -34,15 +34,13 @@ class OutputGrid {
     dataPointer[idx] = value;
   }
 
-  OutputGrid(this.rows, this.columns, this.updateType){
+  OutputGrid(this.rows, this.columns, this.updateType) {
     if (updateType == UpdateType.flutter) {
-      dataFloatList = Float32List(rows * columns *2);
+      dataFloatList = Float32List(rows * columns * 2);
       return;
     }
 
-    if (updateType == UpdateType.cpp) {
-      
-    }
+    if (updateType == UpdateType.cpp) {}
   }
 
   // Converts the pointer data to Float32List
@@ -52,13 +50,17 @@ class OutputGrid {
 
   // Function to set all values in outputPointer to zero
   void clear() {
-    for (int i = 0; i < rows * columns * 2; i++) {
-      this[i] = 0.0;
+    if (updateType == UpdateType.flutter) {
+      // More efficient way to clear the list
+      dataFloatList.fillRange(0, dataFloatList.length, 0.0);
+    } else {
+      // For pointer-based data
+      for (int i = 0; i < rows * columns * 2; i++) {
+        dataPointer[i] = 0.0;
+      }
     }
   }
 
   // Destructor to free the allocated memory
-  void dispose() {
-   
-  }
+  void dispose() {}
 }

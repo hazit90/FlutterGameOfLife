@@ -1,71 +1,96 @@
-
 import 'dart:typed_data';
 import 'package:game_of_life/data/gol_data.dart';
 
-
-class DartComputer{
+class DartComputer {
   int rows = 0;
   int columns = 0;
   double cellSize;
 
-  DartComputer(this.rows, this.columns, this.cellSize);
+  // Pre-allocate reusable buffers to avoid repeated allocations
+  late Float32List _tempGrid;
+  late Float32List _aliveCellsOutput;
+
+  DartComputer(this.rows, this.columns, this.cellSize) {
+    _tempGrid = Float32List(rows * columns);
+    _aliveCellsOutput = Float32List(rows * columns * 2);
+  }
 
   void updateDart(GolData golData) {
-    // Access the current grid data
     var grid = golData.inputGrid.data;
-    Float32List aliveCellsOutput = Float32List(rows * columns *2);
+    golData.outputGrid.clear();
 
-    golData.outputGrid.clear();    
-    
-    // Grid2D newGrid = Grid2D(rows, columns, UpdateType.flutter); 
-    Float32List newGrid = Float32List(rows * columns);
-  
-    // Index for tracking the alive cells in aliveCellsOutput
+    // Reuse pre-allocated buffer
     int k = 0;
+    final double halfCellSize = cellSize * 0.5;
+    final int maxOutputSize = _aliveCellsOutput.length; // Add bounds check
 
     // Loop through each cell in the grid
     for (int y = 0; y < rows; y++) {
+      final int yOffset = y * columns;
+      final double yPos = y * cellSize + halfCellSize;
+
       for (int x = 0; x < columns; x++) {
-        // Count the number of live neighbors for the current cell
-        int neighbors = countNeighbors(x, y, grid);
+        final int index = yOffset + x;
 
-        // Check if the current cell is alive
-        bool alive = grid[y * columns + x] == 1.0;
+        // Count neighbors inline for better performance
+        int neighbors = _countNeighborsInline(x, y, grid);
+        bool alive = grid[index] == 1.0;
 
-        if (alive && (neighbors < 2 || neighbors > 3)) { //rule 1 and 3.
-          newGrid[y * columns + x] = 0.0;
-        } else if (!alive && neighbors == 3) { //rule 4
-          newGrid[y * columns + x] = 1.0;
+        // Apply Conway's rules
+        bool newState;
+        if (alive) {
+          newState = neighbors == 2 || neighbors == 3;
         } else {
-          // If the state doesn't change, copy the current state
-          newGrid[y * columns + x] = grid[y * columns + x];
+          newState = neighbors == 3;
         }
-        if (newGrid[y * columns + x] == 1.0) {
-          aliveCellsOutput[k++] = x * cellSize + cellSize / 2;
-          aliveCellsOutput[k++] = y * cellSize + cellSize / 2;
+
+        _tempGrid[index] = newState ? 1.0 : 0.0;
+
+        if (newState && k + 1 < maxOutputSize) {
+          // Add bounds check
+          _aliveCellsOutput[k++] = x * cellSize + halfCellSize;
+          _aliveCellsOutput[k++] = yPos;
         }
       }
     }
 
-    golData.outputGrid.dataFloatList = aliveCellsOutput;
-    // Update the grid data with the new generation
-    // var tempGrid = golData.inputGrid;
-    golData.inputGrid.dataFloatList = newGrid;
-    // tempGrid.dispose();
+    // Resize alive cells output to actual size
+    golData.outputGrid.dataFloatList = Float32List.view(
+      _aliveCellsOutput.buffer,
+      0,
+      k,
+    );
 
+    // Swap buffers instead of copying
+    golData.inputGrid.dataFloatList = _tempGrid;
+    _tempGrid = Float32List(rows * columns); // Prepare for next iteration
   }
 
-  int countNeighbors(int x, int y, Float32List grid) {
+  // Inline neighbor counting for better performance
+  int _countNeighborsInline(int x, int y, Float32List grid) {
     int count = 0;
-    for (int i = -1; i <= 1; i++) {
-      for (int j = -1; j <= 1; j++) {
-        if (i == 0 && j == 0) continue;
-        int nx = x + i, ny = y + j;
-        if (nx >= 0 && nx < rows && ny >= 0 && ny < columns) {
-          count += grid[ny * rows + nx] == 1.0 ? 1 : 0;
-        }
-      }
+    final int maxX = columns - 1;
+    final int maxY = rows - 1;
+
+    // Unroll the neighbor checking loop for better performance
+    if (y > 0) {
+      final int topRow = (y - 1) * columns;
+      if (x > 0 && grid[topRow + x - 1] == 1.0) count++;
+      if (grid[topRow + x] == 1.0) count++;
+      if (x < maxX && grid[topRow + x + 1] == 1.0) count++;
     }
+
+    final int currentRow = y * columns;
+    if (x > 0 && grid[currentRow + x - 1] == 1.0) count++;
+    if (x < maxX && grid[currentRow + x + 1] == 1.0) count++;
+
+    if (y < maxY) {
+      final int bottomRow = (y + 1) * columns;
+      if (x > 0 && grid[bottomRow + x - 1] == 1.0) count++;
+      if (grid[bottomRow + x] == 1.0) count++;
+      if (x < maxX && grid[bottomRow + x + 1] == 1.0) count++;
+    }
+
     return count;
   }
 }
