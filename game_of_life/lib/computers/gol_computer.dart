@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:game_of_life/computers/cpp_computer.dart';
-import 'package:game_of_life/computers/cpp_threads_computer.dart';
-import 'package:game_of_life/computers/dart_computer.dart';
-import 'package:game_of_life/computers/golang_computer.dart';
-import 'package:game_of_life/computers/golang_threads_computer.dart';
-import 'package:game_of_life/computers/metal_computer.dart';
+import 'package:game_of_life/computers/cpp/cpp_computer.dart';
+import 'package:game_of_life/computers/cpp/cpp_threads_computer.dart';
+import 'package:game_of_life/computers/dart/dart_computer.dart';
+import 'package:game_of_life/computers/go/golang_computer.dart';
+import 'package:game_of_life/computers/go/golang_threads_computer.dart';
+import 'package:game_of_life/computers/metal/metal_computer.dart';
 import 'package:game_of_life/data/gol_data.dart';
 import 'package:game_of_life/data/update_type.dart';
 
