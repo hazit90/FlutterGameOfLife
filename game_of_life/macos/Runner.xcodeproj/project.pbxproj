@@ -38,7 +38,6 @@
 		9B6AA60D2B418D2D0037568D /* metalComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA6022B418D2D0037568D /* metalComputer.cpp */; };
 		9B6AA60E2B418D2D0037568D /* cppThreadsWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA6032B418D2D0037568D /* cppThreadsWrapper.cpp */; };
 		9B6AA60F2B418D2D0037568D /* cppThreadsComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA6052B418D2D0037568D /* cppThreadsComputer.cpp */; };
-		9B6AA6102B418D2D0037568D /* cppMetalComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AA6062B418D2D0037568D /* cppMetalComputer.cpp */; };
 		9BD760FB2DE4B06E00CEF875 /* libgoApi.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9BD760F82DE4B03B00CEF875 /* libgoApi.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9BD761002DE4C6E300CEF875 /* libgoThreadsApi.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9BD760FE2DE4C6DA00CEF875 /* libgoThreadsApi.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -117,8 +116,6 @@
 		9B6AA6032B418D2D0037568D /* cppThreadsWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppThreadsWrapper.cpp; path = ../lib/libs/cppThreadsWrapper.cpp; sourceTree = "<group>"; };
 		9B6AA6042B418D2D0037568D /* cppThreadsComputer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cppThreadsComputer.hpp; path = ../lib/libs/cppThreadsComputer.hpp; sourceTree = "<group>"; };
 		9B6AA6052B418D2D0037568D /* cppThreadsComputer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppThreadsComputer.cpp; path = ../lib/libs/cppThreadsComputer.cpp; sourceTree = "<group>"; };
-		9B6AA6062B418D2D0037568D /* cppMetalComputer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cppMetalComputer.cpp; path = ../lib/libs/cppMetalComputer.cpp; sourceTree = "<group>"; };
-		9B6AA6072B418D2D0037568D /* cppMetalComputer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = cppMetalComputer.hpp; path = ../lib/libs/cppMetalComputer.hpp; sourceTree = "<group>"; };
 		9BD760F72DE4B03B00CEF875 /* libgoApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libgoApi.h; sourceTree = "<group>"; };
 		9BD760F82DE4B03B00CEF875 /* libgoApi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libgoApi.dylib; sourceTree = "<group>"; };
 		9BD760FD2DE4C6DA00CEF875 /* libgoThreadsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libgoThreadsApi.h; sourceTree = "<group>"; };
@@ -228,8 +225,6 @@
 				9B6AA5FB2B418D2D0037568D /* cppComputer.cpp */,
 				9B6AA5FC2B418D2D0037568D /* cppComputer.hpp */,
 				9B6AA5FE2B418D2D0037568D /* cppComputeWrapper.cpp */,
-				9B6AA6062B418D2D0037568D /* cppMetalComputer.cpp */,
-				9B6AA6072B418D2D0037568D /* cppMetalComputer.hpp */,
 				9B6AA6052B418D2D0037568D /* cppThreadsComputer.cpp */,
 				9B6AA6042B418D2D0037568D /* cppThreadsComputer.hpp */,
 				9B6AA6032B418D2D0037568D /* cppThreadsWrapper.cpp */,
@@ -478,7 +473,6 @@
 				33CC10F12044A3C60003C045 /* AppDelegate.swift in Sources */,
 				9B6AA6082B418D2D0037568D /* cppComputer.cpp in Sources */,
 				335BBD1B22A9A15E00E9071D /* GeneratedPluginRegistrant.swift in Sources */,
-				9B6AA6102B418D2D0037568D /* cppMetalComputer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

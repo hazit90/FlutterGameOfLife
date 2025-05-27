@@ -1,13 +1,12 @@
 #include <cstdint>
-#include "cppMetalComputer.hpp"
+#include "metalComputer.hpp"  // Changed from cppMetalComputer.hpp
 #define EXPORT extern "C" __attribute__((visibility("default"))) __attribute__((used))
 
-CppMetalComputer* metalComp = nullptr;
-
+MetalComputer* metalComp = nullptr;  // Changed type
 
 EXPORT
 void initMetal(int nRows, int nCols, double cellSize){
-    metalComp = new CppMetalComputer(nRows, nCols, cellSize);
+    metalComp = new MetalComputer(nRows, nCols, cellSize);  // Direct instantiation
 }
 
 EXPORT

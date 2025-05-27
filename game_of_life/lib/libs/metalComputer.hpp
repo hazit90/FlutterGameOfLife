@@ -31,7 +31,7 @@ private:
     void* mOutputTexture;
     
     float* mOutPixels = nullptr;
-
+    uint8_t* mInputGrid = nullptr;  // Added from CppMetalComputer
     
 private:
     void initWithDevice() ;
@@ -41,9 +41,11 @@ private:
     void sendComputeCommand();
     float* getDataPointer();
     void swapInputWithOutput();
+    void populateWithRandomBools(uint8_t* data);  // Added from CppMetalComputer
     
 public:
     MetalComputer(int32_t nRows, int32_t nCols, double cellSize);
+    ~MetalComputer();  // Add destructor
     void populateInputTexture(uint8_t* inputBuffer);
     float* update();
 };

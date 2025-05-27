@@ -13,8 +13,35 @@ MetalComputer::MetalComputer(int32_t nRows, int32_t nCols, double cell_size)
 {
     pPool   = (NS::AutoreleasePool*) NS::AutoreleasePool::alloc()->init();
     mDevice = (MTL::Device*) MTL::CreateSystemDefaultDevice();
+    
+    // Initialize input grid (moved from CppMetalComputer)
+    mInputGrid = new uint8_t[mRows * mCols];
+    populateWithRandomBools(mInputGrid);
+    
     initWithDevice();
-    initDataVars() ;
+    initDataVars();
+    
+    // Populate the texture with initial data
+    populateInputTexture(mInputGrid);
+}
+
+MetalComputer::~MetalComputer()
+{
+    delete[] mInputGrid;
+    delete[] mOutPixels;
+}
+
+void MetalComputer::populateWithRandomBools(uint8_t *data)
+{
+    srand((uint8_t)7);
+    for (int i = 0; i < mRows * mCols; ++i)
+    {
+        // Generate a random boolean value
+        bool randomBool = rand() % 2;
+
+        // Store 1 or 0 in inputData based on randomBool
+        data[i] = randomBool ? 1 : 0;
+    }
 }
 
 void MetalComputer::initWithDevice() {
