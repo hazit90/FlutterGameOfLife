@@ -25,7 +25,7 @@ import 'package:game_of_life/data/update_type.dart';
 /// // Clean up resources
 /// ffiGrid.dispose();
 /// ```
-class Grid2D {
+class InputGrid {
   /// Pointer to native memory for FFI implementations.
   /// Used for all non-Flutter update types (cpp, cppThreads, metal, golang, golangThreads).
   late Pointer<Float> dataPointer;
@@ -127,7 +127,7 @@ class Grid2D {
   /// The finalizer provides automatic cleanup as a safety net, but manual disposal is recommended.
   ///
   /// Throws [ArgumentError] if [rows] or [columns] are not positive.
-  Grid2D(this.rows, this.columns, this.updateType, {bool initRandom = false})
+  InputGrid(this.rows, this.columns, this.updateType, {bool initRandom = false})
       : _finalizer = Finalizer<Pointer<Float>>(malloc.free) {
     // Validate input parameters
     if (rows <= 0 || columns <= 0) {
