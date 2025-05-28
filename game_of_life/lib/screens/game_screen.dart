@@ -89,7 +89,8 @@ class _GameScreenState extends State<GameScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Game of Life: ${gameOfLife.golComputer.updateType.name}: ${averageFPS.toStringAsFixed(2)} FPS'),
+        title: Text(
+            'Game of Life: ${gameOfLife.golComputer.updateType.name}: ${averageFPS.toStringAsFixed(2)} FPS'),
       ),
       body: InteractiveViewer(
         onInteractionUpdate: (ScaleUpdateDetails details) {
@@ -113,11 +114,8 @@ class _GameScreenState extends State<GameScreen> {
               const SizedBox(width: double.infinity, height: double.infinity),
         ),
       ),
-
     );
   }
-
-
 
   @override
   void dispose() {
