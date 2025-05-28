@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_of_life/computers/gol_computer.dart';
 import 'package:game_of_life/screens/game_screen.dart';
 import 'package:game_of_life/data/update_type.dart';
 
@@ -12,7 +13,7 @@ const int _maxGridSize = 1000;
 ///
 /// This screen provides:
 /// - Input fields for grid dimensions (rows and columns)
-/// - Dropdown to select update algorithm type
+/// - Dropdown to select update algorithm type (filtered by platform support)
 /// - Validation for user inputs
 /// - Navigation to the game screen
 class WelcomeScreen extends StatefulWidget {
@@ -30,14 +31,26 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   late final TextEditingController _colsController;
 
   /// Currently selected update algorithm type
-  UpdateType _selectedUpdateType = UpdateType.cppThreads;
+  late UpdateType _selectedUpdateType;
+
+  /// List of update types supported on the current platform
+  late final List<UpdateType> _supportedUpdateTypes;
 
   @override
   void initState() {
     super.initState();
+
     // Initialize controllers with default values
     _rowsController = TextEditingController(text: _defaultGridSize);
     _colsController = TextEditingController(text: _defaultGridSize);
+
+    // Get supported update types for the current platform
+    _supportedUpdateTypes = GolComputer.getSupportedUpdateTypes();
+
+    // Set default selection to the first supported type, or flutter as fallback
+    _selectedUpdateType = _supportedUpdateTypes.isNotEmpty
+        ? _supportedUpdateTypes.first
+        : UpdateType.flutter;
   }
 
   @override
@@ -91,6 +104,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   }
 
   /// Builds the dropdown for selecting update algorithm type
+  /// Only shows update types that are supported on the current platform
   Widget _buildUpdateTypeDropdown() {
     return Row(
       children: [
@@ -104,7 +118,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             value: _selectedUpdateType,
             isExpanded: true,
             onChanged: _onUpdateTypeChanged,
-            items: UpdateType.values.map(_buildDropdownItem).toList(),
+            items: _supportedUpdateTypes.map(_buildDropdownItem).toList(),
           ),
         ),
       ],
@@ -121,7 +135,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   /// Gets a user-friendly display name for the update type
   String _getUpdateTypeDisplayName(UpdateType updateType) {
-    return updateType.toString().split('.').last;
+    switch (updateType) {
+      case UpdateType.flutter:
+        return 'Dart/Flutter';
+      case UpdateType.cpp:
+        return 'C++';
+      case UpdateType.cppThreads:
+        return 'C++ (Multi-threaded)';
+      case UpdateType.metal:
+        return 'Metal (GPU)';
+      case UpdateType.golang:
+        return 'Go';
+      case UpdateType.golangThreads:
+        return 'Go (Multi-threaded)';
+    }
   }
 
   /// Builds the start game button
@@ -143,7 +170,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   /// Handles changes to the update type dropdown
   void _onUpdateTypeChanged(UpdateType? newValue) {
-    if (newValue != null) {
+    if (newValue != null && _supportedUpdateTypes.contains(newValue)) {
       setState(() {
         _selectedUpdateType = newValue;
       });
@@ -164,6 +191,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     // Validate positive input values
     if (_isInputInvalid(rows, cols)) {
       _showInvalidInputDialog();
+      return;
+    }
+
+    // Double-check that the selected update type is still supported
+    if (!GolComputer.isUpdateTypeSupported(_selectedUpdateType)) {
+      _showUnsupportedUpdateTypeDialog();
       return;
     }
 
@@ -195,6 +228,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     _showErrorDialog(
       title: 'Invalid Input',
       message: 'Please enter positive numbers for both rows and columns.',
+    );
+  }
+
+  /// Shows dialog when selected update type is not supported
+  void _showUnsupportedUpdateTypeDialog() {
+    _showErrorDialog(
+      title: 'Unsupported Algorithm',
+      message:
+          'The selected update algorithm is not supported on this platform.',
     );
   }
 
