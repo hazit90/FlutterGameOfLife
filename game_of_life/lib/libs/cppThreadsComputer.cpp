@@ -5,10 +5,16 @@
 #include <ctime>   // For time()
 #include <cstdlib> // For rand() and srand()
 #include <atomic>
+#include <iostream>
 
 CppThreadsComputer::CppThreadsComputer(int32_t nRows, int32_t nCols, double cellSize)
-: rows(nRows), cols(nCols), cellSize(cellSize)
+: rows(nRows), cols(nCols), cellSize(cellSize), m_numThreads(std::thread::hardware_concurrency()*2)
 {
+    std::cout << "Using " << m_numThreads << " threads." << std::endl;
+
+    //sleep 500 ms
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));    
+    
     initData();
     m_pMutex = (void*) new std::mutex();
     m_pThreadsList = (void*) new std::vector<std::thread>(m_numThreads);
