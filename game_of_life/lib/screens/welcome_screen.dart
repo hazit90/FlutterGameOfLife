@@ -43,7 +43,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               keyboardType: TextInputType.number,
             ),
             const SizedBox(height: 16),
-
             DropdownButton<UpdateType>(
               value: _selectedUpdateType,
               onChanged: (UpdateType? newValue) {
@@ -59,7 +58,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 );
               }).toList(),
             ),
-
             ElevatedButton(
               onPressed: _startGame,
               child: const Text('Start'),
@@ -85,8 +83,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: const Text('Invalid Input'),
-            content: const Text(
-                'Please input row or column value of less than 1000.'),
+            content: Text(
+                'Please input row or column value of less than $maxInput.'),
             actions: <Widget>[
               TextButton(
                 child: const Text('OK'),
@@ -126,15 +124,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     }
 
     // Navigate to the Game Screen with selected UpdateType
-  Navigator.of(context).push(
-    MaterialPageRoute(
-      builder: (context) => GameScreen(
-        rows: rows,
-        columns: cols,
-        updateType: _selectedUpdateType,
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => GameScreen(
+          rows: rows,
+          columns: cols,
+          updateType: _selectedUpdateType,
+        ),
       ),
-    ),
-  );
+    );
   }
 
   @override
